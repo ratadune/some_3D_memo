@@ -1,0 +1,54 @@
+Just found this thread. Not sure if you still need help since this was from months ago. But for the purposes of other people searching and finding this, here you go....
+
+The colliders provided by Unity are mostly pretty simple primitives. Any object that needs to interact physically with another object usually needs a collision model. For objects like hollow houses that need something more complex than a primitive, the collision model is often created in the same 3D model package as the main model. It is essentially a very simplified version of the model, that contains roughly the same volume and boundaries, but with none of the fine detail. The fewer polys/verts in the collision mesh, the less memory it uses, the faster the game runs.
+
+You could create this same thing by creating a bunch of mesh colliders in Unity, but depending on the object, it may be easier and quicker to create it in an outside 3D package and import it into Unity. Mesh colliders use more memory than Unity's default primitive colliders. However if it would take dozens of colliders to create a proper collision mesh, it may be more memory-efficient to import a separate collision mesh. Depends on the situation--experiment and find out.
+
+I believe the way to set an imported model as a collision model in Unity is:
+Add the model to be used for collision to a directory in your Unity project
+In Unity, select the object that needs collision
+In the Inspector, click add component-->physics-->mesh collider
+On the line that says Mesh that has a textbox saying "None (Mesh)" click the circle icon to the right and in the "select mesh" popup, choose the model to be used for collision
+
+There are other rules and guidelines for collision, some general, some specific to Unity. See more info in the following links:
+
+Unity documentation - mesh collider:
+http://docs.unity3d.com/Manual/class-MeshCollider.html
+Tutorial on collision basics in Unity:
+http://www.binpress.com/tutorial/unity-3d-collisions-basics/114
+Unity Answers - how do I supply a custom collision mesh?:
+http://answers.unity3d.com/questions/295015/how-do-i-apply-a-custom-collision-mesh.html
+Unity support forums - mesh guidelines:
+http://forum.unity3d.com/threads/mesh-guidelines.1626/
+
+Making a collision model can be considered a technical modeling task. Often this is done by the modeler, or maybe by engineers/programmers or other people working on the more technical side of development. As a modeler, I have sometimes but not always been asked to provide collision models.
+
+I hope this all helps collect information about collision meshes in Unity in a central location. Disclaimer: I'm a modeler, not a programmer/engineer, so if anyone with more technical knowledge than I has anything to correct or add, please do so. 
+
+
+
+
+
+
+==============
+
+
+How to write a glow shader for lightsaber / aura effect?
+https://forum.unity.com/threads/how-to-write-a-glow-shader-for-lightsaber-aura-effect.463937/
+
+https://github.com/jjxtra/UnityLightsaber
+
+https://www.youtube.com/watch?v=ZT8eutqzW5A
+
+https://www.youtube.com/channel/UCC0_trsvWYyqjZ3njunfU4Q
+
+-------
+lighting sword
+https://www.youtube.com/watch?v=-7HoenS6PpY
+
+
+
+Game Effect Tutorial - Blood - Part 1- DucVu FX
+https://www.youtube.com/watch?v=Lf42tyyfRxI
+
+https://www.youtube.com/watch?v=yXAvt6vl_OI
